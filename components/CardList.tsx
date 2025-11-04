@@ -1,5 +1,6 @@
 import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
+import { Badge } from './ui/badge';
 
 const popularContent = [
   {
@@ -97,15 +98,16 @@ export default function CardList({ title }: { title: string }) {
         {list.map((item) => {
           const { id, title, badge, image, count } = item;
           return (
-            <Card key={id}>
+            <Card key={id} className='flex-row items-center justify-between gap-4 p-4'>
               <div className='w-12 h-12 rounded-sm relative overflow-hidden'>
                 <Image src={image} alt={title} fill className='object-cover' />
               </div>
-              <CardContent>
-                <CardTitle>{title}</CardTitle>
+              <CardContent className='flex-1 p-0'>
+                <CardTitle className='text-sm font-medium'>{title}</CardTitle>
+                <Badge variant={'secondary'}>{badge}</Badge>
               </CardContent>
-              <CardFooter>
-                {count /1000}K
+              <CardFooter className='p-0'>
+                {count / 1000}K
               </CardFooter>
             </Card>
           );
