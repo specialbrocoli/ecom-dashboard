@@ -179,7 +179,7 @@ export default function UserPage() {
           </div>
           {/* CHART CONTAINER */}
           <div className='bg-primary-foreground p-4 rounded-lg'>
-            <h1 className='text-xl font-semibold'>User Information</h1>
+            <h1 className='text-xl font-semibold'>User activity</h1>
             <AppLineChart />
           </div>
         </div>
